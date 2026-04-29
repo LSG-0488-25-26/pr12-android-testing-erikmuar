@@ -63,4 +63,12 @@ Flujo del dropdown + búsqueda
 Cambio de estado del botón toggle
 
 ## Evidencias
+Example unit test 12 test passed.
 
+<img width="1906" height="1069" alt="image" src="https://github.com/user-attachments/assets/0c7249df-8187-44b4-beed-6f4d359177aa" />
+
+Example instrumented test 8 tests passed.
+
+<img width="1919" height="1078" alt="image" src="https://github.com/user-attachments/assets/b0be4614-8b36-4948-bfc6-c4c8d8ec5e0e" />
+
+Link video: https://youtu.be/XWh4t2ATF80
