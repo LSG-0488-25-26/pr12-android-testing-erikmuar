@@ -23,7 +23,6 @@ import androidx.compose.material3.Slider
 import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
-import androidx.compose.material3.TriStateCheckbox
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
@@ -32,7 +31,6 @@ import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.state.ToggleableState
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.android_studio_test_exercice.viewmodel.MainViewModel
@@ -43,7 +41,6 @@ fun MainView(myViewModel: MainViewModel, modifier: Modifier = Modifier) {
     val esVegetaria by myViewModel.esVegetaria.observeAsState(true)
     val esVega by myViewModel.esVega.observeAsState(false)
     val esCarnivor by myViewModel.esCarnivor.observeAsState(true)
-    val triStateStatus by myViewModel.triStateStatus.observeAsState(ToggleableState.Off)
     val selectedOption by myViewModel.selectedOption.observeAsState("Messi")
 
     val sliderValue by myViewModel.sliderValue.observeAsState(0f)
@@ -144,15 +141,6 @@ fun MainView(myViewModel: MainViewModel, modifier: Modifier = Modifier) {
                         )
                     )
                 }
-            }
-
-            Column(modifier = Modifier.fillMaxWidth()) {
-                Text("TriState", Modifier.fillMaxWidth(), fontSize = 20.sp)
-                TriStateCheckbox(
-                    state = triStateStatus,
-                    onClick = { myViewModel.toggleTriStateStatus() },
-                    modifier = Modifier.testTag("triStateCheckbox_id")
-                )
             }
 
             Column(

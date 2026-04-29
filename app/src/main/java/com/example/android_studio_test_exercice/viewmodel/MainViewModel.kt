@@ -1,5 +1,4 @@
 package com.example.android_studio_test_exercice.viewmodel
-import androidx.compose.ui.state.ToggleableState
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -17,9 +16,6 @@ class MainViewModel: ViewModel {
 
     private val _esCarnivor: MutableLiveData<Boolean>
     public val esCarnivor: LiveData<Boolean>
-
-    private val _triStateStatus: MutableLiveData<ToggleableState>
-    public val triStateStatus: LiveData<ToggleableState>
 
     private val _selectedOption: MutableLiveData<String>
     public val selectedOption: LiveData<String>
@@ -59,9 +55,6 @@ class MainViewModel: ViewModel {
         this._esCarnivor = MutableLiveData<Boolean>(true)
         this.esCarnivor = this._esCarnivor
 
-        this._triStateStatus = MutableLiveData<ToggleableState>(ToggleableState.Off)
-        this.triStateStatus = this._triStateStatus
-
         this._selectedOption = MutableLiveData<String>("Messi")
         this.selectedOption = this._selectedOption
 
@@ -100,15 +93,6 @@ class MainViewModel: ViewModel {
         this._esVega.value = !(this._esVega.value)!!
     }
 
-    fun toggleTriStateStatus(){
-        when(this._triStateStatus.value){
-            ToggleableState.On -> setTriStateStatus(ToggleableState.Off)
-            ToggleableState.Off -> setTriStateStatus(ToggleableState.Indeterminate)
-            ToggleableState.Indeterminate -> setTriStateStatus(ToggleableState.On)
-            null -> setTriStateStatus(ToggleableState.On)
-        }
-    }
-
     fun setSelectedOption(option: String) {
         this._selectedOption.value = option
     }
@@ -137,7 +121,4 @@ class MainViewModel: ViewModel {
         this._toggleState.value = !(this._toggleState.value)!!
     }
 
-    private fun setTriStateStatus(triState: ToggleableState){
-        this._triStateStatus.value = triState
-    }
 }

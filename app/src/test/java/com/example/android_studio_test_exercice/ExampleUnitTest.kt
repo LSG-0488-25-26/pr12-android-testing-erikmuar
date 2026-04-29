@@ -1,7 +1,6 @@
 package com.example.android_studio_test_exercice
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.compose.ui.state.ToggleableState
 import com.example.android_studio_test_exercice.viewmodel.MainViewModel
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -27,7 +26,6 @@ class ExampleUnitTest {
         assertFalse(viewModel.esVegetaria.value ?: true)
         assertFalse(viewModel.esVega.value ?: true)
         assertTrue(viewModel.esCarnivor.value == true)
-        assertEquals(ToggleableState.Off, viewModel.triStateStatus.value)
         assertEquals("Messi", viewModel.selectedOption.value)
         assertEquals(0f, viewModel.sliderValue.value)
         assertFalse(viewModel.expanded.value ?: true)
@@ -61,17 +59,6 @@ class ExampleUnitTest {
     fun toggleEsVega_invertsValue() {
         viewModel.toggleEsVega()
         assertTrue(viewModel.esVega.value ?: false)
-    }
-
-    @Test
-    fun toggleTriStateStatus_cyclesAllStates() {
-        assertEquals(ToggleableState.Off, viewModel.triStateStatus.value)
-        viewModel.toggleTriStateStatus()
-        assertEquals(ToggleableState.Indeterminate, viewModel.triStateStatus.value)
-        viewModel.toggleTriStateStatus()
-        assertEquals(ToggleableState.On, viewModel.triStateStatus.value)
-        viewModel.toggleTriStateStatus()
-        assertEquals(ToggleableState.Off, viewModel.triStateStatus.value)
     }
 
     @Test

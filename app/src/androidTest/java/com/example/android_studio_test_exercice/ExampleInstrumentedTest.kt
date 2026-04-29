@@ -41,7 +41,6 @@ class ExampleInstrumentedTest {
         composeTestRule.onNodeWithTag("vegetariaCheckbox_id").assertIsOff()
         composeTestRule.onNodeWithTag("vegaCheckbox_id").assertIsOff()
         composeTestRule.onNodeWithTag("carnivorCheckbox_id").assertIsOn().assertIsNotEnabled()
-        composeTestRule.onNodeWithTag("triStateCheckbox_id").assertIsDisplayed()
         composeTestRule.onNodeWithTag("radio_Vinicius").assertIsNotEnabled()
         composeTestRule.onNodeWithTag("radio_Lamine Yamal").assertIsDisplayed()
         composeTestRule.onNodeWithTag("radio_Raphina").assertIsDisplayed()
